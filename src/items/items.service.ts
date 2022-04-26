@@ -59,6 +59,7 @@ export const update = async (id: number, itemUpdate: BaseItem): Promise<Item | n
         return null;
     }
 
+    console.log(itemUpdate)
     items[id] = { id, ...itemUpdate };
 
     return items[id];
