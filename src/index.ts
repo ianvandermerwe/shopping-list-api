@@ -6,6 +6,8 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import { itemsRouter } from "./items/items.router";
+import { errorHandler } from "./middleware/error.middleware";
+import { notFoundHandler } from "./middleware/not-found.middleware";
 
 dotenv.config();
 
@@ -29,6 +31,9 @@ app.use(helmet()); // Middleware
 app.use(cors()); // Cross Origin Request Sharing
 app.use(express.json());
 app.use("/api/menu/items", itemsRouter);
+
+app.use(errorHandler);
+app.use(notFoundHandler);
 
 /**
  * Server Activation

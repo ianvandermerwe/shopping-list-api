@@ -16,21 +16,18 @@ let items: Items = {
         name: "Bread",
         price: 599,
         description: "Bokomo",
-        image: "https://cdn.auth0.com/blog/whatabyte/burger-sm.png"
     },
     2: {
         id: 2,
         name: "Pizza",
         price: 299,
         description: "Pnp",
-        image: "https://cdn.auth0.com/blog/whatabyte/pizza-sm.png"
     },
     3: {
         id: 3,
         name: "Tea",
         price: 199,
         description: "FiveRoses",
-        image: "https://cdn.auth0.com/blog/whatabyte/tea-sm.png"
     }
 };
 
@@ -59,7 +56,6 @@ export const update = async (id: number, itemUpdate: BaseItem): Promise<Item | n
         return null;
     }
 
-    console.log(itemUpdate)
     items[id] = { id, ...itemUpdate };
 
     return items[id];
